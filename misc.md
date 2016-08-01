@@ -6,8 +6,8 @@ Forwards port `5432` from the `remote-server` to port `9000` on `localhost`.
 
 ### Check what's listening on a port
 
-    netstat -tulpn | grep :80
+    netstat -anp tcp | grep 3000
   
 or
 
-   lsof -n -i:3000 | grep LISTEN
+    lsof -n -i:3000 | grep LISTEN
