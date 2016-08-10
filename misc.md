@@ -1,7 +1,9 @@
 ### SOCKS Proxy
 
-    ssh -D 127.0.0.1:1080 10.0.0.1
-    
+    ssh -D 127.0.0.1:1080 remote_ssh_server
+
+Opens port `1080` on your local machine as a SOCKS proxy so all your HTTP traffic can be specified to go through the SSH tunnel and out `remote_ssh_server` on the other end.
+
 ### Local Port Forwarding
 
     ssh -L 9000:localhost:5432 remote-server
