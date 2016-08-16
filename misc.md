@@ -37,11 +37,11 @@ will appropriately merge from that remote branch. Recommended. Without this,
 you will have to add —track to your branch command or manually merge remote
 tracking branches with “fetch” and then “merge”.
 
-    git config branch.autosetupmerge true
+    git config --global branch.autosetupmerge true
 
 Unqualified git merge to merge the current branch's configured upstream branch, rather than being an error. (git rebase always has this behaviour. Consistent!) You should still merge thoughtfully
 
-    git config merge.defaultToUpstream true
+    git config --global merge.defaultToUpstream true
 
 Default pushing to the current remote branch
 
