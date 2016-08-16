@@ -25,3 +25,28 @@ content as if you accessed `http://horse`. This time, you can only access port
 or
 
     lsof -n -i:3000 | grep LISTEN
+    
+### Git defaults
+
+Allow all Git commands to use colored output, if possible:
+
+    git config --global color.ui auto
+
+Tell git-branch and git-checkout to setup new branches so that git-pull
+will appropriately merge from that remote branch. Recommended. Without this,
+you will have to add —track to your branch command or manually merge remote
+tracking branches with “fetch” and then “merge”.
+
+    git config branch.autosetupmerge true
+
+Unqualified git merge to merge the current branch's configured upstream branch, rather than being an error. (git rebase always has this behaviour. Consistent!) You should still merge thoughtfully
+
+    git config merge.defaultToUpstream true
+
+Default pushing to the current remote branch
+
+    git config --global push.default current
+    
+Alternatively, When pushing without giving a refspec, push the current branch to its upstream branch
+
+    git config --global push.default tracking
