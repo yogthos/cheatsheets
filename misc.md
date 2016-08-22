@@ -50,3 +50,5 @@ Default pushing to the current remote branch
 Alternatively, When pushing without giving a refspec, push the current branch to its upstream branch
 
     git config --global push.default tracking
+
+[git examples](https://github.com/dineshs91/gits)
