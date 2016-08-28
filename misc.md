@@ -52,3 +52,24 @@ Alternatively, When pushing without giving a refspec, push the current branch to
     git config --global push.default tracking
 
 [git examples](https://github.com/dineshs91/gits)
+
+## Rewriting Git commits
+
+#### check the history
+
+    git log 
+
+#### rebase the last `n` commits interactively
+
+    git rebase -i HEAD~n
+
+#### apply the changes
+
+    git rebase --continue
+    
+
+#### Undo commit head
+    
+    git reset HEAD^    
+ 
+  
