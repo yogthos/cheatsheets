@@ -72,4 +72,5 @@ Alternatively, When pushing without giving a refspec, push the current branch to
     
     git reset HEAD^    
  
+[more](http://ohshitgit.com/) 
   
