@@ -72,5 +72,5 @@ Alternatively, When pushing without giving a refspec, push the current branch to
     
     git reset HEAD^    
  
-[more](http://ohshitgit.com/) 
+[more](http://ohshitgit.com/), [even more](https://medium.com/@kannonboy/lesser-known-git-commands-151a1918a60#.tp1hqxlyl)
   
