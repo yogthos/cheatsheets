@@ -26,6 +26,58 @@ or
 
     lsof -n -i:3000 | grep LISTEN
     
+### macOS command line updates
+
+check XCode installed packages:
+
+    xcode-select -p
+    
+install command line tools:
+
+    xcode-select --install
+
+see all options
+
+    softwareupdate -h
+ 
+use the following syntax to download update but not install:
+
+    sudo softwareupdate -d nameHere
+    sudo softwareupdate -d iTunesXPatch-12.3.1
+
+to cancel a download, enter:
+
+    sudo softwareupdate -e
+
+all updates that are recommended for your system:
+
+    sudo softwareupdate -r
+
+to install all updates that are applicable to your system, enter:
+
+    sudo softwareupdate -i -a
+
+to list available updates
+
+```
+softwareupdate --list
+Software Update Tool
+Copyright 2002-2015 Apple Inc.
+
+Finding available software
+Software Update found the following new or updated software:
+   * Command Line Tools (macOS Sierra version 10.12) for Xcode-8.1
+        Command Line Tools (macOS Sierra version 10.12) for Xcode (8.1), 123638K [recommended]
+```
+
+to install a specific update from the list
+
+    softwareupdate --install "Command Line Tools (macOS Sierra version 10.12) for Xcode-8.1"
+
+
+
+    
+    
 ### Git defaults
 
 Allow all Git commands to use colored output, if possible:
