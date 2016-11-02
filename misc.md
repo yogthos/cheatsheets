@@ -105,6 +105,14 @@ Alternatively, When pushing without giving a refspec, push the current branch to
 
 [git examples](https://github.com/dineshs91/gits)
 
+## Amending commits
+
+make the changes
+
+    git add <changed-file>
+    git commit --amend
+    git push -f
+
 ## Rewriting Git commits
 
 #### check the history
