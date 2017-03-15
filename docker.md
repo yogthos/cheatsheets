@@ -18,6 +18,10 @@ stop a running container
 
     docker kill <container id>
     
+remove container
+
+    docker rm <container id>
+
 list volumes
 
     docker volume ls
