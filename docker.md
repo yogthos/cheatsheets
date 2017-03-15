@@ -26,6 +26,15 @@ remove a volume
 
     docker volume rm <volume name>
 
+list available images
+
+    docker images -a
+
+remove image
+
+    docker rmi -f <image Image>
+
 run with docker-compose
 
     docker-compose up
+   
