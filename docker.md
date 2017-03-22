@@ -42,3 +42,16 @@ run with docker-compose
 
     docker-compose up
    
+### prod config
+
+prevent docker from messing with iptables
+
+```
+mkdir /etc/systemd/system/docker.service.d
+cat << EOF > /etc/systemd/system/docker.service.d/noiptables.conf
+[Service]
+ExecStart=
+ExecStart=/usr/bin/docker daemon -H fd:// --iptables=false
+EOF
+systemctl daemon-reload
+```
