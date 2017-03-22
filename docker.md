@@ -5,6 +5,10 @@ build a container
 run the container
 
     docker run <name>
+    
+run the container with a given name
+
+    docker run --name <docker ps name> <name>
 
 list running containers
 
@@ -43,6 +47,11 @@ run with docker-compose
     docker-compose up
    
 ### prod config
+
+limit JVM memory allocation in a container
+
+    docker run -d --name <docker ps name> -p 3000:3000 -m 800M -e JAVA_OPTIONS='-Xmx300m' <name>
+
 
 prevent docker from messing with iptables
 
