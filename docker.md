@@ -25,7 +25,7 @@ stop a running container
 remove container
 
     docker rm <container id>
-
+    
 list volumes
 
     docker volume ls
@@ -34,6 +34,10 @@ remove a volume
 
     docker volume rm <volume name>
 
+see list of stored images
+    
+    docker images
+ 
 list available images
 
     docker images -a
@@ -64,3 +68,42 @@ ExecStart=/usr/bin/docker daemon -H fd:// --iptables=false
 EOF
 systemctl daemon-reload
 ```
+
+
+### Cleanup Commands
+
+Generally safe cleanup commands
+
+delete orphaned and dangling volumes
+
+Dangling volumes are volumes that are not being used by a container. Dangling images are images that are not referenced to by containers or other images.
+
+    docker volume rm $(docker volume ls -qf dangling=true)
+    
+delete dangling and untagged images
+
+    docker rmi $(docker images -q -f dangling=true)
+    
+delete exited containers, Note that this also deletes data containers you might have created.
+
+    docker rm $(docker ps -aqf status=exited)
+
+delete all images
+
+    docker rmi $(docker images -q)
+
+kill all running containers
+
+    docker kill $(docker ps -q)
+
+delete all containers
+
+    docker rm $(docker ps -aq)
+    
+delete stopped containers, and volumes and networks that are not used by containers
+note that this will also delete any data-only containers you might have created
+
+    docker system prune -a
+    
+
+    
