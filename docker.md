@@ -1,7 +1,7 @@
 ### terminology
 
-image - template for containers
-container - an instance of an image
+* image - template for containers
+* container - an instance of an image
 
 ### basic commands
 
