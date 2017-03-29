@@ -1,3 +1,10 @@
+### terminology
+
+image - template for containers
+container - an instance of an image
+
+### basic commands
+
 build a container
 
     docker build -t <name> .
