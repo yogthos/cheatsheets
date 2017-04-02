@@ -12,7 +12,11 @@ build a container
 run the container
 
     docker run <name>
-    
+
+run the container and map port to local host
+
+    docker run -p <host port>:<container port> <name>
+
 run the container with a given name
 
     docker run --name <docker ps name> <name>
