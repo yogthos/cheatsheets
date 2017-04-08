@@ -77,6 +77,7 @@ smtpd_use_tls=yes
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 tls_random_source = dev:/dev/urandom
+```
 
 ### Configure the Postfix Relay Server
 
