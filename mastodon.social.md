@@ -21,7 +21,7 @@ Clone the repo and cd into it:
     git clone https://github.com/tootsuite/mastodon.git
     cd mastodon
 
-Now let's configure some settings. First, rename the file .env.production.sample into .env.production and open it.
+Now let's configure some settings. First, rename the file `.env.production.sample` into `.env.production` and open it.
 
 Set the database username/password settings:
 
@@ -39,7 +39,7 @@ And enable https:
 
 Run `docker-compose run --rm web rake secret` to generate `PAPERCLIP_SECRET`, `SECRET_KEY_BASE`, and `OTP_SECRET`.
 
-Configure the email server
+### Configure the email server
 
 Create a SendGrid account, go to Settings > API Keys, and generate an API key.
 
@@ -53,11 +53,11 @@ Then set up the config like this:
     
 (for SMTP_LOGIN literally just use "apikey")
 
-Configure the site info
+#### Configure the site info
 
 Open the file `/mastodon/config/settings.yml`, and enter the information about your instance(title, description, etc).
 
-Build the containers
+### Build the containers
 
 Before we can build the containers, we need to add a swap file, without it my $10/month droplet was running out of memory during the build process. To add swap, execute these commands:
 
@@ -75,7 +75,7 @@ Now let's finally build our containers! (It will take a few minutes)
 
 (the `-d` flag means that we want to run it in the background mode. You can try running it without this flag, and you will see the log of everything that's going on on the screen)
 
-Create the DB and migrate
+### Create the DB and migrate
 
 Now we need to run several commands in the db container to create the database.
 
@@ -99,7 +99,7 @@ Now you can get back to your own user, and run the migrations:
 
     docker-compose run --rm web rails db:migrate
 
-Precompile assets
+### Precompile assets
 
 Now you can precompile the assets:
 
@@ -111,7 +111,7 @@ After this has finished, restart the containers:
 
 And now your mastodon instance will run on `yourdomain.com:3000`
 
-Setting up nginx and SSL
+### Setting up nginx and SSL
 
 First, follow this guide to generate SSL keys and set up the basic nginx configuration.
 
