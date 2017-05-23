@@ -409,3 +409,23 @@ aren't already in upstream/master are replayed on top of that
 other branch:
 
     git rebase upstream/master
+
+#### tricks
+
+```
+git checkout -
+
+git merge -
+```
+
+See the little minus symbol at the end? That basically tells GIT you want to checkout the previous branch, or merge the previous branch. This will also work with rebasing and any other command which uses branches.
+
+Say you were in master branch and wanted to switch to that new PR request your colleague has submitted, you would do something like this...
+
+```
+git checkout new-feature
+```
+
+You look at the code and test and all looks good, so you want to switch back to master and then merge in the new feature, this will be super easy and you won't need to remember the branch names...
+
+Switch back to master branch `git checkout -` then merge that new feature in `git merge -`. 
