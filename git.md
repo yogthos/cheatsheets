@@ -410,7 +410,7 @@ other branch:
 
     git rebase upstream/master
 
-#### tricks
+### tricks
 
 ```
 git checkout -
