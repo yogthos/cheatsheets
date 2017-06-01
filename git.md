@@ -294,6 +294,13 @@ Then create a `~/.gitignore.`, `.gitignore` follows glob syntax
 #### The "I forgot something in my last commit" Trick
 
 ```
+git add file-you-modified
+git commit --amend
+git push -f
+```
+alternatively
+
+```
 # first: stage the changes you want incorporated in the previous commit
  
 # use -C to reuse the previous commit message in the HEAD
