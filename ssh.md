@@ -35,6 +35,18 @@ VNC Viewer uses port 5900. This shows a double-hop.
     ssh -L 5900:localhost:5900 root@wan-gateway.example.com
     ssh -L 5900:vnc-console.example.com:5900 root@dmz-gateway.example.com
 
+Mount folder/filesystem through SSH 
+
+    sshfs name@server:/path/to/folder /path/to/mount/point
+
+Compare a remote file with a local file 
+
+    ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
+
+SSH connection through host in the middle 
+
+    ssh -t reachable_host ssh unreachable_host
+
 #### reverse port forwarding
 
 This is used in the following situation:
