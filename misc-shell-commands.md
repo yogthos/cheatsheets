@@ -75,9 +75,113 @@ to install a specific update from the list
     softwareupdate --install "Command Line Tools (macOS Sierra version 10.12) for Xcode-8.1"
 
 
+### misc. commands
 
+Run the last command as root 
+
+    sudo !!
     
+Serve current directory tree at http://$HOSTNAME:8000/ 
+
+    python -m SimpleHTTPServer
+
+
+
+python smtp server 
     
+    python -m smtpd -n -c DebuggingServer localhost:1025
+
+
+Runs previous command but replacing 
+    
+    ^foo^bar
+
+currently mounted filesystems in nice layout 
+
+    mount | column -t
+
+Execute a command at a given time 
+
+    echo "ls -l" | at midnight
+ 
+Quick access to the ascii table. 
+
+    man ascii
+
+output your microphone to a remote computer's speaker 
+
+    dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
+
+
+Download an entire website
+* -p parameter tells wget to include all files, including images.
+* -e robots=off you don't want wget to obey by the robots.txt file
+* -U mozilla as your browsers identity.
+* --random-wait to let wget chose a random number of seconds to wait, avoid get into black list.
+
+Other Useful wget Parameters:
+
+--limit-rate=20k limits the rate at which it downloads files.
+* -b continues wget after logging out.
+* -o $HOME/wget_log.txt logs the output
+
+
+    wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com    
+
+Compare a remote file with a local file 
+
+    ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
+
+Close shell keeping all subprocess running 
+
+    disown -a && exit
+
+quickly rename a file 
+
+    mv filename.{old,new}
+
+Display the top ten running processes - sorted by memory usage 
+
+    ps aux | sort -nk +4 | tail
+
+Watch Network Service Activity in Real-time 
+
+    lsof -i
+
+diff two unsorted files without creating temporary files 
+
+    diff <(sort file1) <(sort file2)
+
+Create a script of the last executed command 
+
+    echo "!!" > foo.sh
+
+Delete all files in a folder that don't match a certain file extension 
+
+    rm !(*.foo|*.bar|*.baz)
+
+Show apps that use internet connection at the moment. (Multi-Language) 
+
+    lsof -P -i -n
+
+Sharing file through http 80 port 
+
+    nc -v -l 80 < file.ext
+
+save command output to image 
+
+    ifconfig | convert label:@- ip.png
+
+Show File System Hierarchy 
+
+    man hier
+
+Kills a process that is locking a file. 
+
+    fuser -k filename
+    
+[more](http://www.commandlinefu.com/commands/browse/sort-by-votes/25/50)
+
 ### Git defaults
 
 Allow all Git commands to use colored output, if possible:
