@@ -35,6 +35,13 @@ VNC Viewer uses port 5900. This shows a double-hop.
     ssh -L 5900:localhost:5900 root@wan-gateway.example.com
     ssh -L 5900:vnc-console.example.com:5900 root@dmz-gateway.example.com
 
+### misc
+
+
+Copy your SSH public key on a remote machine for passwordless login - the easy way 
+
+    ssh-copy-id username@hostname
+    
 Mount folder/filesystem through SSH 
 
     sshfs name@server:/path/to/folder /path/to/mount/point
