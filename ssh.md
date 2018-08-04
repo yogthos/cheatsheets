@@ -1,6 +1,6 @@
 ### simple port forwarding (SSH tunneling)
 
-This example creates a tunnel for HTTP. This will forward port 5433 of your localhost to port 5432 of www.example.com.
+This example creates a tunnel for HTTP. This will forward port 5432 from www.example.com. to port 5433 on localhost. 
 
     ssh -f -N -q -L 5433:localhost:5432 username@www.example.com
 
