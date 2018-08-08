@@ -1,3 +1,8 @@
+- set git to automatically track remote branch
+    ```
+    git config --global branch.autoSetupMerge always
+    ```
+    
 - all commits that your branch have that are not yet in master
    ```
    git log master..<HERE_COMES_YOUR_BRANCH_NAME>
