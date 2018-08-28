@@ -1,3 +1,10 @@
+#### resources
+
+[Git magic](https://crypto.stanford.edu/~blynn/gitmagic/index.html)
+
+
+#### common commands
+
 - set git to automatically track remote branch
     ```
     git config --global branch.autoSetupMerge always
