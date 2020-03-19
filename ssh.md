@@ -2,7 +2,7 @@
 
 This example creates a tunnel for HTTP. This will forward port 5432 from www.example.com. to port 5433 on localhost. 
 
-    ssh -f -N -q -L 5433:localhost:5432 username@www.example.com
+    ssh -N -q -L 5433:localhost:5432 username@www.example.com
 
 This example creates a tunnel for IMAP. Here we forward port 1143 on localhost to 143 (IMAP) on imap.example.com.
 
