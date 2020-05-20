@@ -5,6 +5,10 @@
 
 #### common commands
 
+- set a custom key for a repo
+
+    git config --local core.sshCommand "/usr/bin/ssh -i /home/yogthos/.ssh/id_rsa_custom"
+
 - set git to automatically track remote branch
     ```
     git config --global branch.autoSetupMerge always
