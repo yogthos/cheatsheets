@@ -14,6 +14,7 @@ resize a video
 
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" resized.mp4
     
+    ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx265 -preset fast -tag:v hvc1 -b:v 10000 -c:a copy  resized.mp4
 batch convert m4a to mp3
 
     find . -type f -name "*.m4a" -exec bash -c 'ffmpeg -i "$1" "${1/m4a/mp3}"' -- {} \;
