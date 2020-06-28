@@ -2,7 +2,7 @@
 
 create a token here https://clojars.org/tokens/
 
-create a ~/.lein/credentials.clj`
+create a `~/.lein/credentials.clj`
 
 ```
 {"https://repo.clojars.org"
