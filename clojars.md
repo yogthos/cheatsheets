@@ -5,7 +5,7 @@ create a token here https://clojars.org/tokens/
 create a `~/.lein/credentials.clj`
 
 ```
-{"https://repo.clojars.org"
+{#"https://repo.clojars.org"
  {:username "yogthos" :password "<token>"}}
 ```
 
