@@ -8,7 +8,13 @@ loop video to the length of the audio
     
 convert video for Twitter
 
+one of these should work
+
+    ffmpeg -i video.mp4 -vcodec libx264 -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" -pix_fmt yuv420p -strict experimental -r 30 -t 2:20 -acodec aac -vb 1024k -minrate 1024k -maxrate 1024k -bufsize 1024k -ar 44100 -ac 2 out.mp4
+
     ffmpeg -i video.mp4 -vcodec libx264 -vf 'scale=640:trunc(ow/a/2)*2' -acodec aac -vb 1024k -minrate 1024k -maxrate 1024k -bufsize 1024k -ar 44100 -strict experimental -r 30 out.mp4
+     
+    ffmpeg -i $input -vcodec libx264 -pix_fmt yuv420p -strict -2 -acodec aac ${input%.*}.mp4
 
 resize a video
 
@@ -19,7 +25,37 @@ batch convert m4a to mp3
 
     find . -type f -name "*.m4a" -exec bash -c 'ffmpeg -i "$1" "${1/m4a/mp3}"' -- {} \;
 
+specify the Width To Retain the Aspect Ratio
 
+    ffmpeg -i input.mp4 -vf scale=320:-1 output.mp4
+
+The resulting video will have a resolution of 320x180. This is because 1920 / 320 = 6. Thus, the height is scaled to 1080 / 6 = 180 pixels.
+
+specify the Height To Retain the Aspect Ratio
+
+    ffmpeg -i input.mp4 -vf scale=-1:720 output.mp4
+
+figuring out video resolution
+
+    ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4
+
+resize without quality loss
+
+    ffmpeg -i input.mp4 -vf scale=1280:720 -preset slow -crf 18 output.mp4
+
+The input video’s width and height are denoted by iw and ih respectively, to scale the video’s width two times (2x):
+
+    ffmpeg -i input.mp4 -vf scale=iw*2:ih output.mp4
+
+to divide either the height or width by a number, the syntax changes a little as the scale=iw/2:ih/2 argument need to be enclosed within double quotes:
+
+    ffmpeg -i input.mp4 -vf "scale=iw/2:ih/2" output.mp4  
+
+prevent upscaling
+
+    ffmpeg -i input.mp4 -vf "scale='min(320,iw)':'min(240,ih)'" output.mp4
+    
+in the command line above, the minimum width/height to perform scaling is set to 320 and 240 pixels respectively. This is a very simple way to guard against poor quality scaling. 
 
 ## Converting Audio into Different Formats / Sample Rates
 Minimal example: transcode from MP3 to WMA:<br>
