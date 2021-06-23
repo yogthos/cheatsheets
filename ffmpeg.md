@@ -27,6 +27,31 @@ resize a video
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" resized.mp4
     
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx265 -preset fast -tag:v hvc1 -b:v 10000 -c:a copy  resized.mp4
+    
+(BR) Modify the bitrate, using:
+
+    ffmpeg -i $infile -b $bitrate $newoutfile 
+
+(CR) Vary the Constant Rate Factor, using:
+
+    ffmpeg -i $infile -vcodec libx264 -crf 23 $outfile
+
+(SZ) Change the video screen-size (for example to half its pixel size), using:
+
+    ffmpeg -i $infile -vf "scale=iw/2:ih/2" $outfile
+
+(BL) Change the H.264 profile to "baseline", using:
+
+    ffmpeg -i $infile -profile:v baseline $outfile
+
+(DF) Use the default ffmpeg processing, using:
+
+    ffmpeg -i $infile $outfile
+    
+e.g:    
+    
+    ffmpeg -i capitalism.mp4 -vf "scale=iw/4:ih/4" -crf 23 -b 800k capitalism-small.mp4
+    
 batch convert m4a to mp3
 
     find . -type f -name "*.m4a" -exec bash -c 'ffmpeg -i "$1" "${1/m4a/mp3}"' -- {} \;
