@@ -51,6 +51,8 @@ resize a video
 e.g:    
     
     ffmpeg -i capitalism.mp4 -vf "scale=iw/4:ih/4" -crf 23 -b 800k capitalism-small.mp4
+
+    ffmpeg -i input-file.mp4 -vf scale=-1:200 output-file.mp4
     
 batch convert m4a to mp3
 
