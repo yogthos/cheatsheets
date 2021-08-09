@@ -28,6 +28,24 @@ resize a video
     
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx265 -preset fast -tag:v hvc1 -b:v 10000 -c:a copy  resized.mp4
     
+Crop a video
+
+The syntax for cropping a video is `crop=width:height:x:y`. With this, here is a command line that crops a 200×200 portion of a video.
+
+    ffmpeg -i input.mp4 -filter_complex "[0:v]crop=200:200:300:100[cropped]" -map "[cropped]" output.mp4
+
+This command results in a 200x200 cropped portion of the video situated 300 pixels from the left edge and 100 pixels from the top edge.
+
+If the parameters `300:100` is not provided, the resulting portion will be taken from the center of the video.
+
+The input video’s width and height can be denoted by in_w / iw and in_h / ih respectively. An example of cropping a video in FFmpeg using variables instead of specifying the literal pixel coordinates.
+
+    ffmpeg -i input.mp4 -filter_complex "[0:v]crop=in_w/2:in_h/2[cropped]" -map "[cropped]" output.mp4
+
+Bottom right corner: `ffmpeg -i video.mp4 -filter_complex crop=in_w/2:in_h/2:in_w/2:in_h/2 video-out.mp4`
+Remove $x pixels from the top and bottom: `ffmpeg -i video.mp4 -filter_complex crop=in_w:in_h-2*$x video-out.mp4`
+Remove  $x pixels from either side of the video: `ffmpeg -i video.mp4 -filter_complex crop=in_w-2*$x:in_h video-out.mp4`
+
 (BR) Modify the bitrate, using:
 
     ffmpeg -i $infile -b $bitrate $newoutfile 
