@@ -49,5 +49,5 @@ kubectl scale --replicas=1 sts <sts name>
 
 ### Other cheatsheets
 
-https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-https://github.com/dennyzhang/cheatsheet-kubernetes-A4
+* https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+* https://github.com/dennyzhang/cheatsheet-kubernetes-A4
