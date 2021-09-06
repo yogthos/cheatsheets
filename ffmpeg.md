@@ -12,6 +12,16 @@ add text to video
     text='Stack Overflow': fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: \
     boxborderw=5: x=(w-text_w)/2: y=(h-text_h)/2" -codec:a copy output.mp4
 
+blur region
+
+crop flag will crop a region of 420x130 starting at 10x10px from top left
+
+    ffmpeg -i input.mp4 -filter_complex "[0:v]crop=420:130:10:10,boxblur=10[fg];[0:v][fg]overlay=10:10[v]" -map "[v]" blurred.mp4
+
+cut a section of a video
+
+    ffmpeg -i input.mp4 -ss 00:00:00 -t 00:28:00 -async 1 -strict -2 cut.mp4
+
 convert video for Twitter
 
 one of these should work
