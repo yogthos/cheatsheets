@@ -34,6 +34,8 @@ one of these should work
 
 resize a video
 
+    ffmpeg -i input.mp4 -vf scale=320:-1 output.mp4 
+
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" resized.mp4
     
     ffmpeg -i video -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -c:v libx265 -preset fast -tag:v hvc1 -b:v 10000 -c:a copy  resized.mp4
