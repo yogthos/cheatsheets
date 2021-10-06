@@ -25,17 +25,23 @@ kubectl describe sts/<sts-name>
 Running commands
 
 ```
-kubectl exec <pod-name> -it /bin/sh                                         # start an interactive shell in the pod (if one container -- add '-c <container-name> if multi-container case)
-kubectl exec <pod-name> env                                                   # check pod environment variables
-kubectl exec <pod-name> -- <command>                                # run command in pod (single container)
+kubectl exec <pod-name> -it /bin/sh                           # start an interactive shell in the pod (if one container -- add '-c <container-name> if multi-container case)
+kubectl exec <pod-name> env                                   # check pod environment variables
+kubectl exec <pod-name> -- <command>                          # run command in pod (single container)
+```
 Logs
-kubectl logs <pod-name>                                                           # dump pod logs (stdout)
-kubectl logs -f <pod-name>                                                       # stream pod logs (stdout)
-kubectl logs <pod-name> -p                                                      # dump pod logs (stdout) for a previous instantiation of a container
+```
+kubectl logs <pod-name>                                       # dump pod logs (stdout)
+kubectl logs -f <pod-name>                                    # stream pod logs (stdout)
+kubectl logs <pod-name> -p                                    # dump pod logs (stdout) for a previous instantiation of a container
 kubectl exec <pod-name> -- tail -f <path to container logs>   # stream container logs
+```
+
 Port forward/REPL
-kubectl port-forward <pod-name> <port>                                # listen on port <port> locally, forwarding to <port> in the pod
-kubectl port-forward <pod-name> local-port:pod-port
+```
+kubectl port-forward <pod-name> <port>                        # listen on port <port> locally, forwarding to <port> in the pod
+kubectl port-forward <pod-name> local-port:pod-port           # forward a port to a specified local port
+kubectl cp <pod-name>:path/to/app.log .                       # copy log life to local directory
 ```
 
 #### Restarting apps
