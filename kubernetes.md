@@ -35,13 +35,13 @@ kubectl logs <pod-name>                                       # dump pod logs (s
 kubectl logs -f <pod-name>                                    # stream pod logs (stdout)
 kubectl logs <pod-name> -p                                    # dump pod logs (stdout) for a previous instantiation of a container
 kubectl exec <pod-name> -- tail -f <path to container logs>   # stream container logs
+kubectl cp <pod-name>:path/to/app.log .                       # copy log life to local directory
 ```
 
 Port forward/REPL
 ```
 kubectl port-forward <pod-name> <port>                        # listen on port <port> locally, forwarding to <port> in the pod
 kubectl port-forward <pod-name> local-port:pod-port           # forward a port to a specified local port
-kubectl cp <pod-name>:path/to/app.log .                       # copy log life to local directory
 ```
 
 #### Restarting apps
