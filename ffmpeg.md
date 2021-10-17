@@ -5,7 +5,14 @@ loop audio to the length of the video
 loop video to the length of the audio
 
     ffmpeg  -stream_loop -1 -i video.mp4 -i audio.mp3 -shortest -map 0:v:0 -map 1:a:0 -y out.mp4
-    
+
+reduce size
+
+CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28. The default is 23.
+CRF 18 is well known for producing a (arguably) "visually lossless" result:
+
+    ffmpeg -i input.avi -c:v libx264 -crf 18 -preset veryslow -c:a copy out.mp4
+
 add text to video
 
     ffmpeg -i input.mp4 -vf drawtext="fontfile=/path/to/font.ttf: \
