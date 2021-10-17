@@ -8,7 +8,7 @@ loop video to the length of the audio
 
 reduce size
 
-CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28. The default is 23.
+CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28 (higher means more compression). The default is 23.
 CRF 18 is well known for producing a (arguably) "visually lossless" result:
 
     ffmpeg -i input.avi -c:v libx264 -crf 18 -preset veryslow -c:a copy out.mp4
