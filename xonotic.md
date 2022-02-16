@@ -9,6 +9,7 @@ setting up a dedicated server
     git clone git://git.xonotic.org/xonotic/xonotic.git
     cd xonotic
     ./all update -p
+    ./all update -l best
     ./all compile -r
 
 ### start the server
@@ -38,4 +39,4 @@ User=yogthos
 WantedBy=graphical.target
 ```
 
-[server config](https://github.com/yogthos/cheatsheets/blob/master/server.cfg)
+[xonotic/data/server.cfg](https://github.com/yogthos/cheatsheets/blob/master/server.cfg)
