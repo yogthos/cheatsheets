@@ -37,3 +37,5 @@ User=yogthos
 [Install]
 WantedBy=graphical.target
 ```
+
+[server config](https://github.com/yogthos/cheatsheets/blob/master/server.cfg)
