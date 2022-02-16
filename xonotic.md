@@ -18,3 +18,22 @@ setting up a dedicated server
 run in the background
 
     nohup ./all run dedicated xonotic >/dev/null 2>&1 &
+
+### install via systemctl
+
+add a service `/lib/systemd/system/xonotic.service`
+
+```
+[Unit]
+Description=Xonotic
+After=network.target
+
+[Service]
+WorkingDirectory=/<path to>/xonotic
+Environment=""
+ExecStart=/<path to>/xonotic/run-dedicated.sh
+User=yogthos
+
+[Install]
+WantedBy=graphical.target
+```
