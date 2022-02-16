@@ -14,3 +14,7 @@ setting up a dedicated server
 ### start the server
 
     ./all run dedicated xonotic
+    
+run in the background
+
+    nohup ./all run dedicated xonotic >/dev/null 2>&1 &
