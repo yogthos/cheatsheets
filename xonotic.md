@@ -20,7 +20,18 @@ run in the background
 
     nohup ./all run dedicated xonotic >/dev/null 2>&1 &
 
-### install via systemctl
+### add server config
+
+[xonotic/data/server.cfg](https://github.com/yogthos/cheatsheets/blob/master/server.cfg)
+
+### add start script
+
+`<path to>/xonotic/run-dedicated.sh`
+
+    #!/bin/bash
+    ./all run dedicated xonotic >/dev/null 2>&1
+
+### add systemd service
 
 add a service `/etc/systemd/system/xonotic.service`
 
@@ -39,4 +50,7 @@ User=yogthos
 WantedBy=graphical.target
 ```
 
-[xonotic/data/server.cfg](https://github.com/yogthos/cheatsheets/blob/master/server.cfg)
+start dedicated server
+
+    sudo systemctl start xonotic
+
