@@ -22,7 +22,7 @@ run in the background
 
 ### install via systemctl
 
-add a service `/lib/systemd/system/xonotic.service`
+add a service `/etc/systemd/system/xonotic.service`
 
 ```
 [Unit]
