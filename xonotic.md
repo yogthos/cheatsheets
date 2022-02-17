@@ -4,6 +4,11 @@ setting permissions on macOS:
     
 setting up a dedicated server
 
+### install dependencies
+
+    sudo apt-get install autoconf automake build-essential curl git libtool libgmp-dev libjpeg-turbo8-dev libsdl2-dev libxpm-dev xserver-xorg-dev zlib1g-dev unzip zip
+
+
 ### clone and build
 
     git clone git://git.xonotic.org/xonotic/xonotic.git
