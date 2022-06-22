@@ -14,6 +14,13 @@ loop video to the length of the audio
 
     ffmpeg  -stream_loop -1 -i video.mp4 -i audio.mp3 -shortest -map 0:v:0 -map 1:a:0 -y out.mp4
 
+concat videos
+
+    ffmpeg -i vid1.webm -i vid2.webm \
+      -filter_complex "[0:v] [0:a] [1:v] [1:a] \
+    concat=n=2:v=1:a=1 [v] [a]" \
+      -map "[v]" -map "[a]" final.mp4
+
 reduce size
 
 CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28 (higher means more compression). The default is 23.
