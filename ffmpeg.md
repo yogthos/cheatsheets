@@ -316,7 +316,7 @@ If you want to cut off section from the beginning, simply drop -t 00:00:10 from 
 #### reduce filesize
 
 Example:<br>
-`ffmpeg -i input.avi -vcodec libx264 -crf 24 output.avi`<br>
+`ffmpeg -i input.avi -vcodec libx265 -crf 24 output.avi`<br>
 <br>
 It reduced a 100mb video to 9mb.. Very little change in video quality.
 
