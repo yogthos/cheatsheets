@@ -10,6 +10,10 @@ convert images to video
 
     ffmpeg -framerate 10 -i filename-%d.jpg video.mp4
 
+add image to an audio clip
+
+    ffmpeg -i image.jpg -i audio.mp3 -vf scale=640:-1 -c:v libx264 -tune stillimage -c:a aac -b:a 192k out1.mp4
+
 loop audio to the length of the video
 
     ffmpeg  -i video.mp4 -stream_loop -1 -i audio.mp3 -shortest -map 0:v:0 -map 1:a:0 -y out.mp4
