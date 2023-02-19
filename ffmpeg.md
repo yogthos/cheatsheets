@@ -50,7 +50,9 @@ blur region
 
 crop flag will crop a region of 420x130 starting at 10x10px from top left
 
-    ffmpeg -i input.mp4 -filter_complex "[0:v]crop=420:130:10:10,boxblur=10[fg];[0:v][fg]overlay=10:10[v]" -map "[v]" blurred.mp4
+    ffmpeg -i input.mp4 -filter_complex "[0:v]crop=420:130:60:30,boxblur=10[fg];[0:v][fg]overlay=10:10[v]" -map "[v]" blurred.mp4
+
+Crop the copy to be the size of the area to be blurred. In this example: a 420x130 pixel box that is 60 pixels to the right (x axis) and 30 pixels down (y axis) from the top left corner.
 
 cut a section of a video
 
