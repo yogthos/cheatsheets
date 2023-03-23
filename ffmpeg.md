@@ -2,6 +2,8 @@ convert iTunes mp4 to mp3 and strip DRM:
 
     find . -type f -name "*.m4a" -exec bash -c 'ffmpeg -i "$1" "${1/m4a/mp3}" && rm "$1"' -- {} \;
 
+    for f in *.m4a; do ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.m4a}.mp3"; done
+
 batch convert files
 
     for f in *.flac; do ffmpeg -i "$f" -c:a libmp3lame "${f%.flac}.mp3"; done
