@@ -82,6 +82,8 @@ Crop a video
 
 The syntax for cropping a video is `crop=width:height:x:y`. With this, here is a command line that crops a 200×200 portion of a video.
 
+    -filter:v "crop=1600:1080:160:0" -c:a copy #preserves sound
+    
     ffmpeg -i input.mp4 -filter_complex "[0:v]crop=200:200:300:100[cropped]" -map "[cropped]" output.mp4
 
 This command results in a 200x200 cropped portion of the video situated 300 pixels from the left edge and 100 pixels from the top edge.
