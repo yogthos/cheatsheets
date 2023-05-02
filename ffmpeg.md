@@ -62,6 +62,10 @@ Command-line - resize video in FFmpeg to reduce video size
 
     ffmpeg -i input.avi -vf scale=852×480 output.avi
 
+to preserve aspect ratio:
+
+    ffmpeg -i input.avi -vf scale=852:-1 output.avi
+
 add text to video
 
     ffmpeg -i input.mp4 -vf drawtext="fontfile=/path/to/font.ttf: \
