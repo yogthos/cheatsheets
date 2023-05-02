@@ -37,6 +37,30 @@ CRF parameter sets the quality and influences the file size. Lower values mean h
 CRF 18 is well known for producing a (arguably) "visually lossless" result:
 
     ffmpeg -i input.avi -c:v libx264 -crf 18 -preset veryslow -c:a copy out.mp4
+    
+Command-line - Compress and Convert MP4 to WMV
+
+    ffmpeg -i input.mp4 -b 1000k -vcodec wmv2 -acodec wmav2 -crf 19 -filter:v fps=fps=24 output.wmv
+
+Command-line - Compress and Convert MP4 to Webm for YouTube, Ins, Facebook
+
+    ffmpeg -i source.mp4 -c:v libvpx-vp9 -b:v 0.33M -c:a libopus -b:a 96k -filter:v scale=960x540 target.webm
+
+Command-line - Compress and Convert H.264 to H.265 for Higher Compression
+
+    ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
+
+Command-line -Set CRF in FFmpeg to Reduce Video File Size
+
+    ffmpeg -i input.mp4 -vcodec libx264 -crf 24 output.mp4
+
+Command-line - Reduce video frame size to make 4K/1080P FHD video smaller
+
+    ffmpeg -i input.avi -vf scale=1280:720 output.avi
+
+Command-line - resize video in FFmpeg to reduce video size
+
+    ffmpeg -i input.avi -vf scale=852×480 output.avi
 
 add text to video
 
