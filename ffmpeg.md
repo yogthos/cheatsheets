@@ -4,6 +4,10 @@ convert iTunes mp4 to mp3 and strip DRM:
 
     for f in *.m4a; do ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.m4a}.mp3"; done
 
+extract audio
+
+    ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 Sample.mp3
+
 batch convert files
 
     for f in *.flac; do ffmpeg -i "$f" -c:a libmp3lame "${f%.flac}.mp3"; done
