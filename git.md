@@ -5,6 +5,11 @@
 
 #### common commands
 
+- squash all commits
+  ```
+  git reset $(git commit-tree HEAD^{tree} -m "initial commit")
+  ```
+  
 - set a custom key for a repo
     ```
     git config --local core.sshCommand "/usr/bin/ssh -i /home/yogthos/.ssh/id_rsa_custom"
