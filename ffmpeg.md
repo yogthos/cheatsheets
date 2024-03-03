@@ -383,4 +383,5 @@ http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs
 
 ### FFmpeg Explorer
 
-https://ffmpeg.lav.io/
+* https://ffmpeg.lav.io/
+* https://github.com/antiboredom/ffmpeg-explorer/
