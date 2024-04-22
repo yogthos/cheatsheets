@@ -88,11 +88,52 @@ crop flag will crop a region of 420x130 starting at 10x10px from top left
 
 Crop the copy to be the size of the area to be blurred. In this example: a 420x130 pixel box that is 60 pixels to the right (x axis) and 30 pixels down (y axis) from the top left corner. Overlay will decide where in the resulting video the blur will be applied. Alternatively, can use names parameters: `crop=w=300:h=50:x=435:y=720`.
 
-cut a section of a video
+**cut a section of a video**
 
     ffmpeg -i input.mp4 -ss 00:00:00 -t 00:28:00 -async 1 -strict -2 cut.mp4
 
-convert video for Twitter
+
+#### stack videos 
+
+vertically
+
+    ffmpeg -i input0 -i input1 -filter_complex vstack=inputs=2 output.mp4
+    
+horizontally
+
+    ffmpeg -i input0 -i input1 -filter_complex hstack=inputs=2 output
+
+with a border
+
+    ffmpeg -i input0 -i input1 -filter_complex "[0]pad=iw+5:color=black[left];[left][1]hstack=inputs=2" output
+
+with audio
+
+downmix and use original channel placements
+
+    ffmpeg -i input0 -i input1 -filter_complex "[0:v][1:v]vstack=inputs=2[v];[0:a][1:a]amerge=inputs=2[a]" -map "[v]" -map "[a]" -ac 2 output
+
+put all audio from each input into separate channels
+
+    ffmpeg -i input0 -i input1 -filter_complex "[0:v][1:v]vstack=inputs=2[v];[0:a][1:a]amerge=inputs=2,pan=stereo|c0<c0+c1|c1<c2+c3[a]" -map "[v]" -map "[a]"  output
+
+using audio from one particular input
+
+    ffmpeg -i input0 -i input1 -filter_complex "[0:v][1:v]vstack=inputs=2[v]" -map "[v]" -map 1:a output
+
+adding silent audio / If one input does not have audio
+
+    ffmpeg -i input0 -i input1 -filter_complex "[0:v][1:v]vstack=inputs=2[v];anullsrc[silent];[0:a][silent]amerge=inputs=2[a]" -map "[v]" -map "[a]" -ac 2 output.mp4
+
+3 videos or images
+
+    ffmpeg -i input0 -i input1 -i input2 -filter_complex "[0:v][1:v][2:v]hstack=inputs=3[v]" -map "[v]" output
+
+2x2 grid
+
+    ffmpeg -i input0 -i input1 -i input2 -i input3 -filter_complex "[0:v][1:v][2:v][3:v]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]" -map "[v]" output
+
+#### convert video for Twitter
 
 one of these should work
 
