@@ -35,6 +35,19 @@ concat videos
     concat=n=2:v=1:a=1 [v] [a]" \
       -map "[v]" -map "[a]" final.mp4
 
+make a gif
+
+    -vf "fps=15,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128:stats_mode=diff[p];[s1][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle"
+
+    # with text
+    ffmpeg -i input_video.mp4 \
+    -vf "fps=15,scale=320:-1:flags=lanczos,drawtext=text='My Custom Text':fontsize=24:fontcolor=white:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=h-th-10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+    output.gif
+
+    # reversed
+    -vf "fps=15,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse,reverse,fifo" \
+-ss 00:00:00 -t 00:00:10 -loop 0
+
 reduce size
 
 CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28 (higher means more compression). The default is 23.
