@@ -11,3 +11,9 @@ turn off maintenance mode
 check/repair install
 
     sudo nextcloud.occ maintenance:repair
+
+### logs
+
+* Logs for Nextcloud can be found at: `/var/snap/nextcloud/common/nextcloud/data/nextcloud.log`
+* Logs for Certbot can be found at: `/var/snap/nextcloud/current/certs/certbot/logs/letsencrypt.log`
+
