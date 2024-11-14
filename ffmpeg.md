@@ -85,6 +85,13 @@ to preserve aspect ratio:
 
 add text to video
 
+
+    ffmpeg -i input.mp4 \
+    -vf "drawtext=text='some text':fontsize=14:fontcolor=white:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=h-th-10" \
+    output.mp4
+
+add text with custom font
+
     ffmpeg -i input.mp4 -vf drawtext="fontfile=/path/to/font.ttf: \
     text='Stack Overflow': fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: \
     boxborderw=5: x=(w-text_w)/2: y=(h-text_h)/2" -codec:a copy output.mp4
