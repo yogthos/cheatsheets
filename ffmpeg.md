@@ -90,6 +90,8 @@ add text to video
     -vf "drawtext=text='some text':fontsize=14:fontcolor=white:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=h-th-10" \
     output.mp4
 
+    ## use new lines to split up text (no need for control characters)
+
 add text with custom font
 
     ffmpeg -i input.mp4 -vf drawtext="fontfile=/path/to/font.ttf: \
