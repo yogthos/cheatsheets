@@ -108,6 +108,16 @@ crop flag will crop a region of 420x130 starting at 10x10px from top left
 
     ffmpeg -i input.mp4 -filter_complex "[0:v]crop=420:130:60:30,boxblur=10[fg];[0:v][fg]overlay=10:10[v]" -map "[v]" blurred.mp4
 
+
+    "[0:v]crop=400:400:300:350,boxblur=10[fg]; [0:v][fg]overlay=300:350[v]"
+    
+* crop=400:400:300:350 : This denotes a 400x400 pixel box located 300 pixels to the right and 350 pixels to the bottom from the top left corner
+* overlay=300:350 : This determines the pixels to overlay inside the box. Unless required otherwise, use the same last two coordinates mentioned in the crop to ensure the blurred effect is applied on the pixels that are located where the box is. 
+* the 10 indicates the power of the blurring effect or its intensity. You can set it individually for the luma, chroma, and alpha planes and also set the blurring power. If you don’t provide the radius or the blurring power, it defaults to 2.
+
+    ffmpeg -i inputVideo.mp4  -filter_complex "[0:v]crop=200:400:300:350,boxblur=10[fg]; [0:v][fg]overlay=300:350[v]" -map "[v]" blurredVideo.mp4
+
+
 alternatively 
     
     ffmpeg -i trumcut.mp4 -vf "drawbox=x=360:y=10:w=60:h=30:color=black@0.5:t=fill[v]" trumpcut.mp4
