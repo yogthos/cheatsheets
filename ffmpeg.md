@@ -110,7 +110,7 @@ crop flag will crop a region of 420x130 starting at 10x10px from top left
 
 alternatively 
     
-    ffmpeg -i input.mp4 -vf "drawbox=x=10:y=10:w=420:h=130:color=black@0.5" blurred.mp4
+    ffmpeg -i trumcut.mp4 -vf "drawbox=x=360:y=10:w=60:h=30:color=black@0.5:t=fill[v]" trumpcut.mp4
 
 Crop the copy to be the size of the area to be blurred. In this example: a 420x130 pixel box that is 60 pixels to the right (x axis) and 30 pixels down (y axis) from the top left corner. Overlay will decide where in the resulting video the blur will be applied. Alternatively, can use names parameters: `crop=w=300:h=50:x=435:y=720`.
 
