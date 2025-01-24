@@ -10,7 +10,7 @@ Ollama uses simple commands to manage models. Here are some key commands you'll 
 * `ollama ps` Lists the models that are currently running.
 * `ollama stop <model_name>` Unloads a model from memory.
 * `ollama cp <source_model> <destination_model>` Copies a model.
-* `ollama delete <model_name>` Deletes a model.
+* `ollama rm <model_name>` Deletes a model.
 * `ollama push <model_name>:<tag>` Uploads a model to a model library.
 
 ### DeepSeek Models on Ollama
