@@ -13,6 +13,12 @@ Ollama uses simple commands to manage models. Here are some key commands you'll 
 * `ollama rm <model_name>` Deletes a model.
 * `ollama push <model_name>:<tag>` Uploads a model to a model library.
 
+### Qwen Models on Ollama
+
+https://ollama.com/library/qwq:32b
+
+    ollama run qwq:32b
+
 ### DeepSeek Models on Ollama
 
 DeepSeek models are available on the Ollama library in different sizes and formats. Here's a breakdown:
