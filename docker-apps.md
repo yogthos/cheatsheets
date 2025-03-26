@@ -6,6 +6,10 @@ https://tamariapp.com/
 
 https://github.com/prokosna/sola_mpd
 
+### M.A.L.P. - A mpd client for Android
+
+https://gitlab.com/gateship-one/malp
+
 ### MPD config
 
 check audio device `cat /proc/asound/cards`
@@ -22,3 +26,4 @@ audio_output {
 #       mixer_index     "0"             # optional
 }
 ```
+
