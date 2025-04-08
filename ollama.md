@@ -21,7 +21,7 @@ https://ollama.com/library/qwq:32b
 
 pulling GGUF from huggingface
 
-   ollama pull hf.co/lmstudio-community/DeepCoder-14B-Preview-GGUF:Q8_0
+    ollama pull hf.co/lmstudio-community/DeepCoder-14B-Preview-GGUF:Q8_0
 
 ### DeepSeek Models on Ollama
 
