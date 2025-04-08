@@ -19,6 +19,10 @@ https://ollama.com/library/qwq:32b
 
     ollama run qwq:32b
 
+pulling GGUF from huggingface
+
+   ollama pull hf.co/lmstudio-community/DeepCoder-14B-Preview-GGUF:Q8_0
+
 ### DeepSeek Models on Ollama
 
 DeepSeek models are available on the Ollama library in different sizes and formats. Here's a breakdown:
