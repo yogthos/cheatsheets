@@ -35,6 +35,23 @@ concat videos
     concat=n=2:v=1:a=1 [v] [a]" \
       -map "[v]" -map "[a]" final.mp4
 
+using bash script
+
+```bash
+resolution=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 $1)
+
+# Replace "x" with ":" to format as "width:height"
+resolution_colon=${resolution//x/:}
+
+# Run FFmpeg with proper scaling/padding
+ffmpeg -i $1 -i $2 \
+-filter_complex \
+"[1:v]scale=${resolution_colon}:force_original_aspect_ratio=decrease,pad=${resolution_colon}:(ow-iw)/2:(oh-ih)/2,setsar=1[v1]; \
+[0:v][0:a][v1][1:a]concat=n=2:v=1:a=1[outv][outa]" \
+-map "[outv]" -map "[outa]" $3
+```
+
+
 make a gif
 
     -vf "fps=15,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128:stats_mode=diff[p];[s1][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle"
