@@ -70,6 +70,10 @@ reduce size
 CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28 (higher means more compression). The default is 23.
 CRF 18 is well known for producing a (arguably) "visually lossless" result:
 
+    ffmpeg -i input.mp4 -c:v libx265 -crf 28 -preset slow -c:a aac -b:a 128k output.mp4
+
+    ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 128k output.mp4 
+    
     ffmpeg -i input.avi -c:v libx264 -crf 18 -preset veryslow -c:a copy out.mp4
     
 Command-line - Compress and Convert MP4 to WMV
