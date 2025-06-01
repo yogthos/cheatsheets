@@ -159,6 +159,19 @@ Crop the copy to be the size of the area to be blurred. In this example: a 420x1
 vertically
 
     ffmpeg -i input0 -i input1 -filter_complex vstack=inputs=2 output.mp4
+
+
+complex stack with different sizes
+
+```bash
+#!/bin/bash
+ffmpeg -stream_loop -1 -i $1 -i $2 \
+-filter_complex \
+"[0:v] fps=30, scale=640:-2, format=yuv420p, setsar=1 [gif]; \
+ [1:v] scale=640:-2, setsar=1 [mp4]; \
+ [gif][mp4] vstack" \
+-shortest -movflags +faststart $3    
+```
     
 horizontally
 
