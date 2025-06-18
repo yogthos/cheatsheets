@@ -6,7 +6,7 @@ https://zaiste.net/posts/shell-commands-rust/
 * `bottom` is `top` replacement https://github.com/ClementTsang/bottom
 * `fd` is a fast and user-friendly alternative to `find`, the built-in command-line program in Unix/Linux for walking a file hierarchy. https://github.com/sharkdp/fd
 * `procs` is a modern replacement for ps, the default command-line program in Unix/Linux for getting information about processes. It provides convenient, human-readable (and colored) output format by default. https://github.com/dalance/procs
-
+* `scooter` interactive search/replace util https://github.com/thomasschafer/scooter
 
 ### aliases
 
