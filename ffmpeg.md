@@ -68,6 +68,9 @@ make a gif
 reduce size
 
 CRF parameter sets the quality and influences the file size. Lower values mean higher quality, and typical values are from 18 to 28 (higher means more compression). The default is 23.
+
+    ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset veryslow -tune film -profile:v baseline -level 3.0 -pix_fmt yuv420p -movflags +faststart -acodec aac -b:a 64k -vf "scale='if(gt(iw,ih),640,-2)':'if(gt(iw,ih),-2,480)',fps=24" output.mp4
+
 CRF 18 is well known for producing a (arguably) "visually lossless" result:
 
     ffmpeg -i input.mp4 -c:v libx265 -crf 28 -preset slow -c:a aac -b:a 128k output.mp4
