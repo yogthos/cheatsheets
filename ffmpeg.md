@@ -128,6 +128,22 @@ remove location
 
     ffmpeg -i input.mp4 -metadata location="" -metadata location-eng="" -acodec copy -vcodec copy output.mp4
 
+overlay second input over the first
+
+This overlays the right half of `overlay.mp4` onto `background.mp4` only between seconds 5-10 and copies audio from the first input. Adjust timings as needed.
+
+    ffmpeg -i background.mp4 -i overlay.mp4 -filter_complex \
+    "[0][1]overlay=x=main_w/2:y=0:enable='between(t,5,10)'[v]" \
+    -map "[v]" -map 0:a -c:a copy output.mp4
+
+overlay background with content of overlay from the right 
+
+    ffmpeg -i background.mp4 -i overlay.mp4 -filter_complex \
+    "[1:v]crop=iw/2:ih:iw/2:0[right]; \
+     [right][0:v]scale2ref=w=iw/2:h=ih[scaled][base]; \
+     [base][scaled]overlay=x=main_w-overlay_w:y=0" \
+    -c:a copy output.mp4
+
 blur region
 
 crop flag will crop a region of 420x130 starting at 10x10px from top left
