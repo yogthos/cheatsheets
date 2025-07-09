@@ -144,6 +144,17 @@ overlay background with content of overlay from the right
      [base][scaled]overlay=x=main_w-overlay_w:y=0" \
     -c:a copy output.mp4
 
+overlay top right quarter
+
+    ffmpeg -i background.mp4 -i overlay.mp4 -filter_complex \
+    "[0:v]split[bg][bg_ref]; \
+     [bg_ref]crop=w=iw/2:h=ih/2:x=iw/2:y=0[bg_quarter]; \
+     [1:v]crop=w=iw/2:h=ih/2:x=iw/2:y=0[ov_quarter]; \
+     [ov_quarter][bg_quarter]scale2ref[ov_scaled][ref]; \
+     [ref]nullsink; \
+     [bg][ov_scaled]overlay=x=main_w-overlay_w:y=0" \
+    -c:a copy output.mp4
+
 blur region
 
 crop flag will crop a region of 420x130 starting at 10x10px from top left
