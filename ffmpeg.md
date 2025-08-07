@@ -10,8 +10,25 @@ extract audio
 
 fade out video
 
-    ffmpeg -i input.mp4 -vf "fade=t=out:st=159:d=1" -c:a copy output.mp4
+```
+#!/bin/bash
 
+INPUT=$1
+OUTPUT=$2
+FADE_SEC=$3
+
+# Get duration of the video in seconds
+DURATION=$(ffprobe -v quiet -show_entries format=duration -of csv=p=0 "$INPUT")
+
+# Calculate start time for fade (duration - 4 seconds)
+FADE_START=$(echo "$DURATION - $FADE_SEC" | bc -l)
+
+# Apply fade out to last  seconds
+ffmpeg -i "$INPUT" -vf "fade=t=out:st=$FADE_START:duration=$FADE_SEC" -c:a copy "$OUTPUT"
+
+echo "Faded out last 4 seconds. Output saved as $OUTPUT"
+```    
+    
 batch convert files
 
     for f in *.flac; do ffmpeg -i "$f" -c:a libmp3lame "${f%.flac}.mp3"; done
