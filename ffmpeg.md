@@ -8,6 +8,10 @@ extract audio
 
     ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 Sample.mp3
 
+fade out video
+
+    ffmpeg -i input.mp4 -vf "fade=t=out:st=159:d=1" -c:a copy output.mp4
+
 batch convert files
 
     for f in *.flac; do ffmpeg -i "$f" -c:a libmp3lame "${f%.flac}.mp3"; done
