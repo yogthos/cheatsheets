@@ -2,8 +2,8 @@ REPL based
 * [aider](https://github.com/Aider-AI/aider)
 * [plandex](https://github.com/plandex-ai/plandex)
 * [qwen-code](https://github.com/QwenLM/qwen-code)
-* [opencode](https://github.com/sst/opencode)
-  * setting up with GLM https://docs.z.ai/scenario-example/develop-tools/opencode  
+* [claude-code](https://www.anthropic.com/claude-code)
+  * setting up with GLM https://docs.z.ai/scenario-example/develop-tools/claude
 * [crush](https://github.com/charmbracelet/crush)
   * currently using with Gemini 
 
