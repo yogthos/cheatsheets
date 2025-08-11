@@ -10,3 +10,8 @@ REPL based
 IDE based
 * [continue](https://github.com/continuedev/continue)
 * [roo-code](https://github.com/RooCodeInc/Roo-Code?tab=readme-ov-file)
+
+### running models
+
+* https://github.com/ggml-org/llama.cpp
+* https://github.com/menloresearch/jan
