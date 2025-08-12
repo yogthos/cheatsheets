@@ -1,0 +1,5 @@
+https://radicle.xyz/
+
+To create a Radicle repository, run `rad init` from a Git repository with at least one commit.
+To clone a repository, run `rad clone <rid>`. For example, `rad clone rad:z3gqcJUoA1n9HaHKufZs5FCSGazv5` clones the Radicle 'heartwood' repository.
+To get a list of all commands, run `rad`.
