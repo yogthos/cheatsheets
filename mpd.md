@@ -11,6 +11,8 @@ example output
                       FiiO DigiHug USB Audio at usb-0000:00:14.0-8, full speed
 ```
 
+test the devices to see where they output to `speaker-test -t wav -c 2`
+
 set the device in `/etc/mpd.conf`
 
 ```
