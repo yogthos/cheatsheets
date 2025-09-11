@@ -26,6 +26,12 @@ to set up claude-code mcp config for Clojure, add the following to `~/.claude.js
       }
 ```
 
+another way `claude mcp add mcp-mermaid --scope user /opt/homebrew/bin/mcp-mermaid`
+
+### useful MCPs
+
+* https://github.com/hustcc/mcp-mermaid
+
 ### running models
 
 * https://github.com/ggml-org/llama.cpp
