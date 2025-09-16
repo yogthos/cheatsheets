@@ -38,3 +38,8 @@ docs https://docs.anthropic.com/en/docs/claude-code/mcp
 
 * https://github.com/ggml-org/llama.cpp
 * https://github.com/menloresearch/jan
+
+### analytics tools
+
+* https://github.com/badboysm890/ClaraVerse
+* https://github.com/quelmap-inc/quelmap
