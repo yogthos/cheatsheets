@@ -8,6 +8,7 @@ REPL based
 * [crush](https://github.com/charmbracelet/crush)
   * currently using with Gemini 
 * opencode `npm install -g opencode-ai` - works with GLM
+  
 IDE based
 * [continue](https://github.com/continuedev/continue)
 * [roo-code](https://github.com/RooCodeInc/Roo-Code?tab=readme-ov-file)
