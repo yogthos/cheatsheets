@@ -1,4 +1,5 @@
-https://lineageosroms.com/redfin/
+https://wiki.lineageos.org/devices/redfin/install
+
 https://wiki.lineageos.org/gapps
 
 boot phone to recovery: power off then power button + volume down
