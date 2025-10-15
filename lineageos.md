@@ -19,6 +19,9 @@ then run
     # sideload is the key part
     ./adb sideload roms/pixel5/lineage-20.0-20230101-nightly-redfin-signed.zip
 
+the update might hang at 47%, just wait till the phone says it's complete
+after that, it will ask if you want to reboot to recovery, say yes
+
 do another update to install Gapps, have to enable ADB again
 
     ./adb -d reboot sideload
