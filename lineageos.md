@@ -12,8 +12,11 @@ select apply from ADB
 
 then run
 
+    # optional steps
     ./adb root
     ./adb -d reboot sideload
+
+    # sideload is the key part
     ./adb sideload roms/pixel5/lineage-20.0-20230101-nightly-redfin-signed.zip
 
 do another update to install Gapps, have to enable ADB again
