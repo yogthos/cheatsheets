@@ -6,7 +6,7 @@ REPL based
   * setting with Deepseek https://api-docs.deepseek.com/guides/anthropic_api
   * setting up with GLM https://docs.z.ai/scenario-example/develop-tools/claude
 * [crush](https://github.com/charmbracelet/crush)
-  * currently using with Gemini 
+  * currently using with GLM (easy to reconfigure) 
 * opencode `npm install -g opencode-ai` - works with GLM
   
 IDE based
