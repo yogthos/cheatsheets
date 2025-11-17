@@ -23,7 +23,16 @@ to set up claude-code mcp config for Clojure, add the following to `~/.claude.js
             "-c",
             "export PATH=/opt/homebrew/bin:$PATH; exec clojure -X:mcp :port 7888"
           ]
-        }
+        },
+        "code-mode": {
+           "command": "npx",
+            "args": [
+               "@utcp/mcp-bridge"
+            ],
+            "env": {
+               "UTCP_CONFIG_FILE": "~/.config/utcp/.utcp_config.json"
+            }
+         }
       }
 ```
 
@@ -34,6 +43,37 @@ docs https://docs.anthropic.com/en/docs/claude-code/mcp
 ### useful MCPs
 
 * https://github.com/hustcc/mcp-mermaid
+* https://github.com/universal-tool-calling-protocol/code-mode
+
+sample config:
+
+```javascript
+{
+  "load_variables_from": [
+    {
+      "variable_loader_type": "dotenv",
+      "env_file_path": "~/.env"
+    }
+  ],
+  "manual_call_templates": [
+    {
+      "name": "puppeteer",
+      "call_template_type": "mcp",
+      "config": {
+        "mcpServers": {
+          "puppeteer_server": {
+            "command": "npx",
+            "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+            "env": {
+              "PUPPETEER_LAUNCH_OPTIONS": "{\"headless\": false}"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
+```
 
 ### running models
 
