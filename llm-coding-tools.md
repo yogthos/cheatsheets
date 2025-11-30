@@ -1,4 +1,5 @@
 REPL based
+* [nekot](https://github.com/BalanceBalls/nekot)
 * [aider](https://github.com/Aider-AI/aider)
 * [plandex](https://github.com/plandex-ai/plandex)
 * [qwen-code](https://github.com/QwenLM/qwen-code)
