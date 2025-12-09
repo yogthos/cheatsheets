@@ -1,4 +1,5 @@
 REPL based
+* [devstral](https://mistral.ai/news/devstral-2-vibe-cli)
 * [nekot](https://github.com/BalanceBalls/nekot)
 * [aider](https://github.com/Aider-AI/aider)
 * [plandex](https://github.com/plandex-ai/plandex)
