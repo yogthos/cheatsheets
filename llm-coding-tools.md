@@ -81,6 +81,7 @@ sample config:
 
 * https://github.com/ggml-org/llama.cpp
 * https://github.com/menloresearch/jan
+* llamafile https://mozilla-ai.github.io/llamafile/creating_llamafiles/
 
 ### analytics tools
 
