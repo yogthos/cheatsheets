@@ -1,4 +1,5 @@
 REPL based
+* [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main) https://shittycodingagent.ai/
 * [devstral](https://mistral.ai/news/devstral-2-vibe-cli) https://github.com/mistralai/mistral-vibe
 * [nekot](https://github.com/BalanceBalls/nekot)
 * [aider](https://github.com/Aider-AI/aider)
