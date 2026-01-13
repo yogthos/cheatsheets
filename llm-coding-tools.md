@@ -1,3 +1,6 @@
+general tools
+* beads https://github.com/steveyegge/beads
+
 REPL based
 * [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main) https://shittycodingagent.ai/
 * [devstral](https://mistral.ai/news/devstral-2-vibe-cli) https://github.com/mistralai/mistral-vibe
