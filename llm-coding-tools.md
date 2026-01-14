@@ -1,5 +1,6 @@
 general tools
 * beads https://github.com/steveyegge/beads
+* browser cli https://github.com/cosinusalpha/webctl
 
 REPL based
 * [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main) https://shittycodingagent.ai/
