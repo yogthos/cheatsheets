@@ -1,3 +1,10 @@
+dependencies
+
+```bash
+apt install screen
+pip install -e .[metrics,bitsandbytes,qwen]
+```
+
 needed files
 
 ```bash
