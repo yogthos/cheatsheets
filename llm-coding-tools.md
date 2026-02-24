@@ -2,6 +2,7 @@ general tools
 * beads https://github.com/steveyegge/beads
 * browser cli https://github.com/cosinusalpha/webctl
 * coding agent toolkit providing semantic retrieval and editing capabilities  https://github.com/oraios/serena
+* Annotate and review coding agent plans visually https://github.com/backnotprop/plannotator
 
 REPL based
 * [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main) https://shittycodingagent.ai/
