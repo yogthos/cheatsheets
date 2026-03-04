@@ -1,4 +1,5 @@
 general tools
+* lightweight container https://github.com/lynaghk/vibe/
 * beads https://github.com/steveyegge/beads
 * browser cli https://github.com/cosinusalpha/webctl
 * coding agent toolkit providing semantic retrieval and editing capabilities  https://github.com/oraios/serena
