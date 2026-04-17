@@ -19,7 +19,8 @@ REPL based
 * [crush](https://github.com/charmbracelet/crush)
   * currently using with GLM (easy to reconfigure) 
 * opencode `npm install -g opencode-ai` - works with GLM
-  
+* ATLAS https://github.com/itigges22/ATLAS
+    
 IDE based
 * [continue](https://github.com/continuedev/continue)
 * [roo-code](https://github.com/RooCodeInc/Roo-Code?tab=readme-ov-file)
