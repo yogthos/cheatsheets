@@ -7,7 +7,8 @@ general tools
 * memory for projects https://github.com/milla-jovovich/mempalace
 
 REPL based
-* [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main) https://shittycodingagent.ai/
+
+* [pi-coding-agent](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/README.md) https://pi.dev/
 * [devstral](https://mistral.ai/news/devstral-2-vibe-cli) https://github.com/mistralai/mistral-vibe
 * [nekot](https://github.com/BalanceBalls/nekot)
 * [aider](https://github.com/Aider-AI/aider)
