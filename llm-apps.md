@@ -5,3 +5,4 @@
 * Qwen TTS https://github.com/QwenLM/Qwen3-TTS
 * UI-TARS Multimodal AI Agent Stack https://github.com/bytedance/UI-TARS-desktop
 * OCR https://github.com/opendatalab/mineru
+* 3D models https://github.com/ZimengXiong/Modelr
