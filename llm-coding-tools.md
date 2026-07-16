@@ -6,6 +6,10 @@ general tools
 * Annotate and review coding agent plans visually https://github.com/backnotprop/plannotator
 * memory for projects https://github.com/milla-jovovich/mempalace
 
+Skills
+* https://github.com/dilidin2/tic/tree/master
+* https://github.com/JuliusBrussee/caveman
+
 REPL based
 
 * [devstral](https://mistral.ai/news/devstral-2-vibe-cli) https://github.com/mistralai/mistral-vibe
