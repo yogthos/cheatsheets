@@ -7,3 +7,4 @@
 * utils for mac https://github.com/vorssaint/vorssaint-utils
 * disk cleaning https://github.com/tw93/Mole
 * screenshots https://github.com/FuzzyIdeas/Clop
+* open source lightroom https://github.com/storytold/lightcraft
