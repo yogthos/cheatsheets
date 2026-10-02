@@ -6,3 +6,4 @@
 * UI-TARS Multimodal AI Agent Stack https://github.com/bytedance/UI-TARS-desktop
 * OCR https://github.com/opendatalab/mineru
 * 3D models https://github.com/ZimengXiong/Modelr
+* OpenGhost chat agent with graphs https://github.com/ANDRETRIPOL/OpenGhost
